@@ -34,19 +34,229 @@
           class="h-12 rounded-2xl"
         />
       </div>
-      <div class="flex flex-row gap-4 pt-4 font-jaro text-xl">
-        <a href="#hero">Home</a>
-        <a onclick="toggleDropdown()"
-          >Menu <ion-icon name="chevron-down-outline"></ion-icon>
-        </a>
-        <div
-          id="dropdown"
-          class="absolute right-0 mt-2 w-40 bg-white dark:bg-[#333] border dark:border-gray-700 rounded-md shadow-lg hidden z-10"
-        >
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Starters</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Mains</a>
-          <a href="#" class="block px-4 py-2 hover:bg-gray-100">Desserts</a>
+      <div class="flex flex-row gap-4 pt-4 font-jaro text-xl relative">
+      <a href="#hero">Home</a>
+      <a onclick="toggleDropdown()">Menu <ion-icon name="chevron-down-outline"></ion-icon></a>
+      <div
+        id="dropdown"
+        class="absolute mt-4 w-40 bg-white dark:bg-[#333] border dark:border-gray-700 rounded-md shadow-md hidden z-10"
+      >
+        <a href="#" onclick="openFullscreenMenu()" class="block px-4 py-2 bg-paleyellow">Starters</a>
+        <a href="#" onclick="openFullscreenMenu()" class="block px-4 py-2 bg-paleyellow">Mains</a>
+        <a href="#" onclick="openFullscreenMenu()" class="block px-4 py-2 bg-paleyellow">Desserts</a>
+        <a href="#" onclick="openFullscreenMenu()" class="block px-4 py-2 bg-paleyellow">Drinks</a>
+      </div>
+      
+      <div id="fullscreen-menu" class="fixed h-screen inset-0 bg-paleyellow z-50 flex flex-col overflow-y-auto">
+        <div class="flex justify-between items-center p-6">
+          <h4 class="font-jaro text-3xl">Menu</h4>
+          <button onclick="closeFullscreenMenu()" class="text-3xl">&times;</button>
         </div>
+        
+        <section class="bg-paleyellow">
+          <h4 class="font-jaro text-2xl px-14 py-4">Starters</h4>
+          <div class="flex flex-wrap flex-row justify-between px-14 py-8 gap-8">
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/trio-of-buscheta.jpg" alt="Trio Of Buscheta" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Trio Of Buscheta</h4>
+              <p class="font-inder">Toasted artisan bread with three toppings: classic tomato & basil, wild mushroom & truffle oil, and whipped ricotta with honey & pistachio.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/crispy-calamari.jpg" alt="Crispy Salt and Pepper Calamari" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Crispy Salt and Pepper Calamari</h4>
+              <p class="font-inder">Tender calamari lightly fried with a salt and pepper coating, served with a zesty lemon-dill aioli for dipping.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/roasted-basil-tomato-soup.jpg" alt="Roasted Tomato and Basil Soup" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Roasted Tomato and Basil Soup</h4>
+              <p class="font-inder">A rich and creamy soup made from slow-roasted vine tomatoes and fresh basil, finished with a swirl of crème fraîche and garlic croutons.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/saffron-mozarella-arancini.jpg" alt="Saffron & Mozzarella Arancini" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Saffron & Mozzarella Arancini</h4>
+              <p class="font-inder">Golden-fried saffron risotto balls filled with molten mozzarella, served on a bed of spicy arrabbiata sauce.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/pan-seared-scallops.jpg" alt="Pan-Seared Scallops" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Pan-Seared Scallops</h4>
+              <p class="font-inder">Perfectly seared scallops served with a smooth sweet corn purée, crispy prosciutto, and a brown butter vinaigrette.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/buratta-prosclutto-salad.jpg" alt="Buratta & Prosciutto Salad" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Buratta & Prosciutto Salad</h4>
+              <p class="font-inder">Creamy burrata cheese and thinly sliced prosciutto di Parma with fresh arugula, grilled peaches, and a drizzle of aged balsamic glaze.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/gourmet-chicken-wings.jpg" alt="Gourmet Chicken Wings" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Gourmet Chicken Wings</h4>
+              <p class="font-inder">Crispy chicken wings tossed in a sweet and spicy honey-sriracha glaze, topped with toasted sesame seeds and fresh scallions.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/feta-dip.jpg" alt="Spicy Whipped Feta Dip" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Spicy Whipped Feta Dip</h4>
+              <p class="font-inder">Creamy whipped feta cheese infused with chili and herbs, served with warm pita bread and a selection of fresh, crunchy vegetables.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/beef-carpaccio.jpg" alt="Beef Carpaccio" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Beef Carpaccio</h4>
+              <p class="font-inder">Thinly sliced raw beef tenderloin drizzled with olive oil, topped with rocket, capers, shaved Parmesan, and a delicate truffle aioli.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-palegray">
+          <h4 class="font-jaro text-2xl px-14 py-4">Main Dishes</h4>
+          <div class="flex flex-wrap flex-row justify-between px-14 py-8 gap-8">
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/pan-seared-duck-confit.jpg" alt="Pan Seared Duck Confit" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Pan Seared Duck Confit</h4>
+              <p class="font-inder">Slow-cooked to tender perfection and served over a bed of creamy polenta with a rich cherry and red wine reduction.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/ribeye-steak.jpg" alt="Ribeye Steak with Garlic Herb Butter" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Ribeye Steak with Garlic Herb Butter</h4>
+              <p class="font-inder">A 12oz prime ribeye grilled to your liking, topped with melting garlic herb butter and served with parmesan truffle fries and grilled asparagus.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/pan-seared-salmon.jpg" alt="Pan-Seared Salmon" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Pan-Seared Salmon</h4>
+              <p class="font-inder">Crispy-skin salmon served on a bed of quinoa with roasted seasonal vegetables and a bright lemon-butter sauce.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/braised-short-rib.jpg" alt="Braised Short Rib Ragu" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Braised Short Rib Ragu</h4>
+              <p class="font-inder">Slow-braised beef short rib in a rich tomato and red wine sauce, tossed with fresh pappardelle pasta and topped with shaved pecorino.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/mushroom-truffle-risotto.jpg" alt="Mushroom & Truffle Risotto" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Mushroom & Truffle Risotto</h4>
+              <p class="font-inder">A rich and creamy Arborio risotto with wild mushrooms, black truffle shavings, and aged Parmesan cheese.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/herb-roasted-chicken.jpg" alt="Herb-Roasted Half Chicken" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Herb-Roasted Half Chicken</h4>
+              <p class="font-inder">A succulent half chicken roasted with herbs, served with creamy mashed potatoes, sautéed green beans, and a natural pan jus.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/grilled-porkchop-with-apple-cider.jpg" alt="Grilled Porkchop with Apple-Cider Glaze" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Grilled Porkchop with Apple-Cider Glaze</h4>
+              <p class="font-inder">A thick-cut bone-in pork chop, grilled and finished with a sweet and tangy apple-cider glaze. Served with sweet potato mash and sautéed spinach.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/spicy-coconut-curry.jpg" alt="Spicy Coconut Curry" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Spicy Coconut Curry</h4>
+              <p class="font-inder">A vibrant, plant-based curry with chickpeas, sweet potatoes, and spinach in a fragrant coconut broth, served with jasmine rice and a wedge of lime.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/gilded-fork-steak-fries.jpg" alt="The Gilded Fork Steak Fries" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">The Gilded Fork Steak Fries</h4>
+              <p class="font-inder">A perfectly grilled 8oz filet mignon, topped with a savory herb compound butter and served with a side of crisp, golden fries.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-paleyellow">
+          <h4 class="font-jaro text-2xl px-14 py-4">Desserts</h4>
+          <div class="flex flex-wrap flex-row justify-between px-14 py-8 gap-8">
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/new-york-cheesecake.jpg" alt="New York Cheesecake" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">New York Cheesecake</h4>
+              <p class="font-inder">A classic, dense, and creamy cheesecake with a graham cracker crust, topped with a house-made mixed berry compote.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/chocolate-salted-caramel-tart.jpg" alt="Chocolate & Salted Caramel Tart" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Chocolate & Salted Caramel Tart</h4>
+              <p class="font-inder">A crisp chocolate pastry shell filled with a decadent salted caramel and topped with a smooth chocolate ganache.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/molten-lava-cake.jpg" alt="Molten Chocolate Lava Cake" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Molten Chocolate Lava Cake</h4>
+              <p class="font-inder">A rich, dark chocolate cake with a warm, gooey center, served with a scoop of vanilla bean ice cream and a dusting of cocoa powder.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/classic-tiramisu.jpg" alt="Classic Tiramisu" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Classic Tiramisu</h4>
+              <p class="font-inder">Layers of coffee-soaked ladyfingers and a delicate mascarpone cream, generously dusted with dark cocoa powder.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/deconstructed-lemon-tart.jpg" alt="Deconstructed Lemon Tart" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Deconstructed Lemon Tart</h4>
+              <p class="font-inder">A vibrant lemon curd served alongside buttery shortbread crumbles, toasted meringue kisses, and a touch of fresh raspberry coulis.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/apple-and-blackberry-crumble.jpg" alt="Apple & Blackberry Crumble" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Apple & Blackberry Crumble</h4>
+              <p class="font-inder">Warm, sweet apples and tart blackberries baked under a crunchy oat crumble topping, served with a scoop of cinnamon ice cream.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/salted-caramel-budino.jpg" alt="Salted Caramel Budino" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Salted Caramel Budino</h4>
+              <p class="font-inder">A silky, Italian-style pudding with layers of rich caramel, topped with a sprinkle of sea salt and a delicate dollop of whipped cream.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/lemon-lavender-panna-cotta.jpg" alt="Lemon & Lavender Panna Cotta" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Lemon & Lavender Panna Cotta</h4>
+              <p class="font-inder">A silky smooth, chilled Italian cream dessert subtly infused with lemon zest and a hint of lavender.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/sticky-toffee-pudding.jpg" alt="Sticky Toffee Pudding" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Sticky Toffee Pudding</h4>
+              <p class="font-inder">A wonderfully moist date sponge cake drenched in a warm, rich butterscotch sauce and served with a dollop of clotted cream.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-palegray">
+          <h4 class="font-jaro text-2xl px-14 py-4">Drinks</h4>
+          <div class="flex flex-wrap flex-row justify-between px-14 py-8 gap-8">
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/rosemary-and-grapefruit.jpg" alt="Rosemary & Grapefruit Soda" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Rosemary & Grapefruit Soda</h4>
+              <p class="font-inder">A refreshing, non-alcoholic house-made soda with fresh grapefruit juice and a rosemary-infused simple syrup.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/spicy-margarita.jpg" alt="Spicy Margarita" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Spicy Margarita</h4>
+              <p class="font-inder">Tequila, fresh lime juice, and agave nectar, shaken with a muddled jalapeño for a kick and served with a chili-salt rim.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/lavender-haze.jpg" alt="The Lavender Haze" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">The Lavender Haze</h4>
+              <p class="font-inder">A beautifully layered cocktail featuring Empress 1908 Gin, fresh lemon juice, and a house-made lavender honey syrup.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/espresso-martini.jpg" alt="Espresso Martini" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Espresso Martini</h4>
+              <p class="font-inder">A sophisticated blend of premium vodka, fresh espresso, and coffee liqueur, shaken until frosty and smooth.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/the-smoked-rosemary.jpg" alt="Smoked Rosemary Old Fashioned" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Smoked Rosemary Old Fashioned</h4>
+              <p class="font-inder">A classic Old Fashioned made with small-batch bourbon, aromatic bitters, and served over a single large ice cube with a smoked rosemary sprig.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/fresh-mint-lemonade.jpg" alt="Fresh Mint Lemonade" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Fresh Mint Lemonade</h4>
+              <p class="font-inder">Our classic house-made lemonade muddled with fresh mint leaves for a cool, invigorating twist.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/the-gilded-spritz.jpg" alt="The Gilded Spritz" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">The Gilded Spritz</h4>
+              <p class="font-inder">A refreshing blend of Aperol, prosecco, and a hint of elderflower liqueur, garnished with a fresh orange twist.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/house-cabernet-savvingnon.jpg" alt="House Cabernet Savvingnon" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">House Cabernet Savvingnon</h4>
+              <p class="font-inder">A full-bodied red from the Napa Valley with notes of dark cherry, plum, and a hint of oak. Available by the glass or bottle.</p>
+            </div>
+            <div class="text-center max-w-72 bg-white p-6 rounded-2xl">
+              <img src="/images/premium-tea-selection.jpg" alt="Premium Tea Selection" class="rounded-2xl w-60 h-44">
+              <h4 class="font-jaro text-2xl">Premium Tea Selection</h4>
+              <p class="font-inder">A curated selection of high-quality black, green, and herbal teas, served hot in a personal pot.</p>
+            </div>
+          </div>
+        </section>
+      </div>
         <a href="#story">Our Story</a>
         <a href="#sigDishes">Signature Dishes</a>
         <a href="#feedback">Feedback</a>
@@ -686,6 +896,24 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+    function toggleDropdown() {
+      const dropdown = document.getElementById("dropdown");
+      dropdown.classList.toggle("hidden");
+    }
+
+    function openFullscreenMenu() {
+      const menu = document.getElementById("fullscreen-menu");
+      const dropdown = document.getElementById("dropdown");
+      menu.classList.remove("hidden");
+      dropdown.classList.add("hidden");
+    }
+
+    function closeFullscreenMenu() {
+      const menu = document.getElementById("fullscreen-menu");
+      menu.classList.add("hidden");
+    }
+    </script>
     <script src="index.js"></script>
   </body>
 </html>
