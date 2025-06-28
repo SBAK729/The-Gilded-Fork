@@ -97,7 +97,7 @@
     "yaml": "^2.8.0"
   },
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch"
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
   },
   "repository": {
     "type": "git",
